@@ -1,0 +1,24 @@
+---
+version: '3.6'
+
+#
+# Ports:
+# 9042         Cassandra
+# 9200         Elastic HTTP
+# 9300         Elastic Transport
+# 9092         Kafka
+# 3030         Kafka Explorer
+# 9090         Prometheus
+# 3000         Grafana
+#
+
+volumes:
+  postgres-data:
+    driver: ${VOLUMES_DRIVER}
+  redis-data:
+    driver: ${VOLUMES_DRIVER}
+  mariadb-data:
+    driver: ${VOLUMES_DRIVER}
+  elasticsearch-data:
+    driver: ${VOLUMES_DRIVER}
+

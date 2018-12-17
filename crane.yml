@@ -1,0 +1,36 @@
+---
+services:
+
+  postgres:
+    # hostname: postgres
+    volume:
+    - "/Volumes/HardDrive/datasets/libraries.io/tarballs:/datasets/tarballs"
+
+  # elasticsearch:
+  #  hostname: elasticsearch
+
+  # redis:
+  #  hostname: redis
+
+commands:
+  psql: exec postgres psql
+
+accelerated-mounts:
+  postgres:
+    uid: 1000
+    gid: 1000
+
+groups:
+  front:
+  - web
+  - postgres
+  - solr41
+  - elasticsearch
+  - redis
+  stores:
+  - postgres
+  - elasticsearch
+  - redis
+  - solr41
+  queue:
+  - redis
